@@ -17,7 +17,9 @@ class pageController extends Controller
             }
             return view('page',['page_title' => $pages[0]->page_title,'page_body' => $pages[0]->page_body]);                                       
         }else{
-            
+            $default_pageid = intval(DB::select('SELECT * FROM `settings` WHERE `_key` = ?' ,['default_page'])[0]->value);
+            $pages = DB::select('SELECT * FROM `pages` WHERE `page_id` = ?',[$default_pageid]);
+            return view('page',['page_title' => $pages[0]->page_title,'page_body' => $pages[0]->page_body]);     
         }        
     }
 
