@@ -3,17 +3,22 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class pageController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+
+    public function index($id = null)
     {
-        //
+        if(is_numeric($id)){
+            $pages = DB::select('SELECT * FROM `pages`');
+            foreach($pages as $page){
+                return view('page',['page_title' => $page->page_title,'page_body' => $page->page_body]);
+            }
+        }
+        else{
+            
+        }
     }
 
     /**
@@ -71,12 +76,6 @@ class pageController extends Controller
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         //
