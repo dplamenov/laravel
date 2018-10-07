@@ -11,14 +11,14 @@ class pageController extends Controller
     public function index($id = null)
     {
         if(is_numeric($id)){
-            $pages = DB::select('SELECT * FROM `pages`');
-            foreach($pages as $page){
-                return view('page',['page_title' => $page->page_title,'page_body' => $page->page_body]);
+            $pages = DB::select('SELECT * FROM `pages` WHERE `page_id` = ?',[$id]);
+            if(count($pages) == 0){
+                return view('error',['error_type' => 'Page not exist']);
             }
-        }
-        else{
+            return view('page',['page_title' => $pages[0]->page_title,'page_body' => $pages[0]->page_body]);                                       
+        }else{
             
-        }
+        }        
     }
 
     /**
