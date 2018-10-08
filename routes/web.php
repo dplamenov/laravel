@@ -11,7 +11,5 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::resource('page/{id?}','pageController');
+Route::get('/','pageController@index');
+Route::resource('page','pageController');
