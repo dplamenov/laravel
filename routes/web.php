@@ -13,3 +13,4 @@
 
 Route::get('/','pageController@index');
 Route::resource('page','pageController');
+Route::resource('admin','adminController');
