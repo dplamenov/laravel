@@ -14,3 +14,4 @@
 Route::get('/','pageController@index');
 Route::resource('page','pageController');
 Route::resource('admin','adminController');
+Route::post('admin/login','adminController@login');

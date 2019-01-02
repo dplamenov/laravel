@@ -7,9 +7,13 @@ use Illuminate\Support\Facades;
 
 class adminController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $isLogged = Session::get('islogged');
+        if(session('islogged') == true){
+            echo 'Logged';
+        }else{
+            return view('login');
+        }
     }
 
     public function create()
@@ -41,5 +45,11 @@ class adminController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function login(Request $request){
+        $request_post = $request->post();
+        $request->session()->put('islogged',true);
+
     }
 }
