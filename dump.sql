@@ -3,21 +3,10 @@ SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
-
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT = @@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS = @@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION = @@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
-
---
--- Database: `laravel`
---
-
--- --------------------------------------------------------
-
---
--- Структура на таблица `pages`
---
 
 CREATE TABLE IF NOT EXISTS `pages`
 (
@@ -28,19 +17,9 @@ CREATE TABLE IF NOT EXISTS `pages`
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8;
 
---
--- Схема на данните от таблица `pages`
---
-
 INSERT INTO `pages` (`page_id`, `page_title`, `page_body`)
 VALUES
   (1, 'Начало', 'Начало');
-
--- --------------------------------------------------------
-
---
--- Структура на таблица `settings`
---
 
 CREATE TABLE IF NOT EXISTS `settings`
 (
@@ -52,16 +31,18 @@ COMMIT;
 
 CREATE TABLE IF NOT EXISTS `admin`
 (
-  `admin_id` int(11)    NOT NULL AUTO_INCREMENT,
+  `admin_id` int(11)     NOT NULL AUTO_INCREMENT,
   `username` VARCHAR(22) NOT NULL,
   `email`    VARCHAR(60) NOT NULL,
   `password` VARCHAR(60) NOT NULL,
   PRIMARY KEY (`admin_id`)
 ) ENGINE = InnoDB;
 
-
 INSERT INTO `settings` (`_key`, `value`)
 VALUES ('default_page', '1');
+
+INSERT INTO `admin` (`admin_id`, `username`, `email`, `password`)
+VALUES (NULL, 'admin', 'email@example.com', 'admin');
 
 /*!40101 SET CHARACTER_SET_CLIENT = @OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS = @OLD_CHARACTER_SET_RESULTS */;
