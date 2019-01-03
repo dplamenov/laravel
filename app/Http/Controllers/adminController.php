@@ -50,6 +50,8 @@ class adminController extends Controller
 
     public function login(Request $request){
         $request_post = $request->post();
+
+
         $request->session()->put('islogged',true);
 
         return redirect('admin');
