@@ -46,7 +46,7 @@ CREATE TABLE IF NOT EXISTS `settings` (
 COMMIT;
 
 
-INSERT INTO `s` (`_key`, `value`) VALUES ('default_page', '1');
+INSERT INTO `settings` (`_key`, `value`) VALUES ('default_page', '1');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

@@ -9,8 +9,9 @@ class adminController extends Controller
 {
     public function index(Request $request)
     {
-        if(session('islogged') == true){
-            echo 'Logged';
+
+        if($request->session()->get('islogged') == true){
+            return view('logged');
         }else{
             return view('login');
         }
@@ -51,5 +52,12 @@ class adminController extends Controller
         $request_post = $request->post();
         $request->session()->put('islogged',true);
 
+        return redirect('admin');
+
+    }
+
+    public function logout(Request $request){
+        $request->session()->put('islogged',false);
+        return redirect('admin');
     }
 }
