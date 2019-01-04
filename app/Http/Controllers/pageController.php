@@ -19,7 +19,7 @@ class pageController extends Controller
     {
         $pages = DB::select('SELECT * FROM `pages` WHERE `page_id` = ?',[$id]);
         if(count($pages) == 0){
-            return view('error',['error_type' => 'Page not exist']);
+            return view('error',['error' => 'Page not exist']);
         }
         return view('page',['page_title' => $pages[0]->page_title,'page_body' => $pages[0]->page_body]);            
     }

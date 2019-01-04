@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades;
+use Illuminate\Support\Facades\DB;
 
 class adminController extends Controller
 {
@@ -50,11 +50,19 @@ class adminController extends Controller
 
     public function login(Request $request){
         $request_post = $request->post();
+        $username = $request_post['username'];
+        $password = $request_post['password'];
+
+        $count = DB::select('SELECT COUNT(*) as count FROM `admin` WHERE `username` = ? and `password` = ?',[$username,$password])[0]->count;
+        if($count == 1){
+            $request->session()->put('islogged',true);
+            return redirect('admin');
+        }else{
+            return view('error',['error' => 'No such that admin at database']);
+        }
 
 
-        $request->session()->put('islogged',true);
-
-        return redirect('admin');
+        //return redirect('admin');
 
     }
 
