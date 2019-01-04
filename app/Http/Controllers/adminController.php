@@ -61,13 +61,16 @@ class adminController extends Controller
             return view('error',['error' => 'No such that admin at database']);
         }
 
-
-        //return redirect('admin');
-
     }
 
     public function logout(Request $request){
         $request->session()->put('islogged',false);
         return redirect('admin');
     }
+
+    public function viewPage(){
+        $pages = DB::select('SELECT * FROM `pages`');
+        return view('allpage',['pages' => $pages]);
+    }
+
 }

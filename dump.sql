@@ -18,8 +18,10 @@ CREATE TABLE IF NOT EXISTS `pages`
   DEFAULT CHARSET = utf8;
 
 INSERT INTO `pages` (`page_id`, `page_title`, `page_body`)
-VALUES
-  (1, 'Начало', 'Начало');
+VALUESs (1, 'Начало', 'Начало');
+
+INSERT INTO `pages` (`page_id`, `page_title`, `page_body`)
+VALUES (NULL, 'Home page', 'Home page body');
 
 CREATE TABLE IF NOT EXISTS `settings`
 (
@@ -43,6 +45,7 @@ VALUES ('default_page', '1');
 
 INSERT INTO `admin` (`admin_id`, `username`, `email`, `password`)
 VALUES (NULL, 'admin', 'email@example.com', 'admin');
+
 
 /*!40101 SET CHARACTER_SET_CLIENT = @OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS = @OLD_CHARACTER_SET_RESULTS */;
