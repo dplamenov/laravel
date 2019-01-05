@@ -64,4 +64,12 @@ class adminController extends Controller
         return redirect(url('admin/page'));
     }
 
+    public function createPage(){
+
+    }
+
+    protected function storePage(){
+
+    }
+
 }

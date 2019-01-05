@@ -18,3 +18,4 @@ Route::get('admin','adminController@index');
 
 Route::get('admin/page','adminController@viewPage');
 Route::get('admin/page/delete/{id}','adminController@deletePage');
+Route::get('admin/page/create','adminController@createPage');
