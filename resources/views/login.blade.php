@@ -1,3 +1,6 @@
+@extends('header')
+@section('title', 'Login form')
+@section('content')
 <h1>Login form</h1>
 
 <form method="POST" action="{{url('admin/login')}}">
@@ -9,3 +12,4 @@
 
     <input type="submit"/>
 </form>
+    @endsection

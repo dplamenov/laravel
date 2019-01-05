@@ -1,6 +1,9 @@
+@extends('header')
+@section('title', 'Pages')
+@section('content')
 <a href="{{url('admin')}}">Go back</a>
 <hr>
-<a href="{{url('admin/page/create')}}">Add page</a>
+<a href="{{url('admin/page/create')}}">Create page</a>
     @if(is_array($pages))
         <table border="1">
             <tr><th>Page id</th><th>Page title</th><th>Page body</th><th>Edit</th><th>Delete</th></tr>
@@ -18,3 +21,5 @@
         <p>{{$pages}}</p>
 
     @endif
+@endsection
+

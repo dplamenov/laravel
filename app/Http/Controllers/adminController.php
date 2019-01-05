@@ -68,12 +68,12 @@ class adminController extends Controller
         if(self::isLogged($request) == false){
             return redirect('admin');
         }
-
+        return view('admin.createpage');
 
     }
 
-    protected function storePage(){
-
+    public function storePage(Request $request){
+        echo '<pre>'.print_r($request->post(),true).'</pre>';
     }
 
 }

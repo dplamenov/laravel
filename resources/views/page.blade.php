@@ -1,3 +1,6 @@
+@extends('header')
+@section('title', 'Page');
+@section('content')
 <nav style="float: right;">
         <p>Navigation</p>
         @foreach($pages as $page)
@@ -8,6 +11,6 @@
 </nav>
 <h1>{{$page_title}}</h1>
 <div>{{$page_body}}</div>
-
+@endsection
 
 
