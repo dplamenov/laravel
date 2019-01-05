@@ -3,6 +3,16 @@
 @section('content')
 <a href="{{url('admin/page')}}">Go back</a>
 <hr>
+@if(count($errors) > 0)
+    <div>
+        <ul>
+            @foreach($errors->all() as $error)
+                <li>{{$error}}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
 <form method="post" action="{{url('admin/page/create')}}">
     @csrf
     @method('post')
