@@ -32,15 +32,14 @@ class adminController extends Controller
 
     public function login(Request $request)
     {
-        $this->validate($request, [
+        $data = $this->validate($request, [
             'username' => 'min:3|max:20',
             'password' => 'min:2'
 
         ]);
 
-        $request_post = $request->post();
-        $username = $request_post['username'];
-        $password = $request_post['password'];
+        $username = $data['username'];
+        $password = $data['password'];
 
         $count = DB::select('SELECT COUNT(*) as count FROM `admin` WHERE `username` = ? and `password` = ?', [$username, $password])[0]->count;
         if ($count == 1) {
