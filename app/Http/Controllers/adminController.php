@@ -18,7 +18,7 @@ class adminController extends Controller
     {
 
         if($request->session()->get('islogged') == true){
-            return view('logged');
+            return view('admin.logged');
         }else{
             return view('login');
         }
@@ -51,9 +51,9 @@ class adminController extends Controller
         $pages = new Models\Page();
         $pages = $pages->getAllPage();
         if(count($pages) == 0){
-            return view('allpage',['pages' => 'No page']);
+            return view('admin.allpage',['pages' => 'No page']);
         }
-        return view('allpage',['pages' => $pages]);
+        return view('admin.allpage',['pages' => $pages]);
     }
 
     public function deletePage(Request $request, int $id){
@@ -64,7 +64,11 @@ class adminController extends Controller
         return redirect(url('admin/page'));
     }
 
-    public function createPage(){
+    public function createPage(Request $request){
+        if(self::isLogged($request) == false){
+            return redirect('admin');
+        }
+
 
     }
 
