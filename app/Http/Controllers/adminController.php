@@ -26,10 +26,6 @@ class adminController extends Controller
         }
     }
 
-    public function login_form(){
-
-    }
-
     public function login(Request $request)
     {
         $data = $this->validate($request, [
@@ -90,12 +86,27 @@ class adminController extends Controller
 
     public function storePage(Request $request)
     {
-         $this->validate($request, [
+        $data = $this->validate($request, [
             'title' => 'min:5|max:11',
-            'body' => 'min:20'
+            'body' => 'min:10'
 
-         ]);
+        ]);
 
+        $title = $data['title'];
+        $body = $data['body'];
+
+        DB::insert("INSERT INTO `pages` (`page_id`, `page_title`, `page_body`)
+VALUES (null, ?, ?)", [$title, $body]);
+
+        return redirect(url('/'));
+
+
+    }
+
+    public function setDefaultPage(Request $request){
+        $page_id = intval($request->post()['page_id']);
+        DB::update("UPDATE `settings` SET `value` = ? WHERE `_key` = 'default_page'",[$page_id]);
+        return redirect(url('admin/page'));
     }
 
 }

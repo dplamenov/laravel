@@ -20,3 +20,4 @@ Route::get('admin/page','adminController@viewPage');
 Route::get('admin/page/delete/{id}','adminController@deletePage');
 Route::get('admin/page/create','adminController@createPage');
 Route::post('admin/page/create','adminController@storePage');
+Route::post('admin/page/default','adminController@setDefaultPage');

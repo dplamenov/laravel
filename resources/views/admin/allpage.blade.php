@@ -21,5 +21,26 @@
         <p>{{$pages}}</p>
 
     @endif
+
+<hr>
+    <h2>Set default page</h2>
+    <div>
+        <form method="post" action="{{url('admin/page/default')}}">
+            @csrf
+            @method('post')
+            <label>
+                Choose page
+
+            <select name="page_id">
+                @foreach($pages as $page)
+                    <option value="{{$page->page_id}}">{{$page->page_title}}</option>
+                @endforeach
+            </select>
+            </label>
+
+            <input type="submit"/>
+        </form>
+    </div>
+
 @endsection
 

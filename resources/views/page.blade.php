@@ -1,5 +1,5 @@
 @extends('header')
-@section('title', 'Page');
+@section('title', 'Page')
 @section('content')
 <nav style="float: right;">
         <p>Navigation</p>
