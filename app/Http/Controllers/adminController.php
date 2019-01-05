@@ -103,9 +103,10 @@ VALUES (null, ?, ?)", [$title, $body]);
 
     }
 
-    public function setDefaultPage(Request $request){
+    public function setDefaultPage(Request $request)
+    {
         $page_id = intval($request->post()['page_id']);
-        DB::update("UPDATE `settings` SET `value` = ? WHERE `_key` = 'default_page'",[$page_id]);
+        DB::update("UPDATE `settings` SET `value` = ? WHERE `_key` = 'default_page'", [$page_id]);
         return redirect(url('admin/page'));
     }
 
