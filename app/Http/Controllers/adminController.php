@@ -50,6 +50,9 @@ class adminController extends Controller
         }
         $pages = new Models\Page();
         $pages = $pages->getAllPage();
+        if(count($pages) == 0){
+            return view('allpage',['pages' => 'No page']);
+        }
         return view('allpage',['pages' => $pages]);
     }
 
@@ -57,7 +60,8 @@ class adminController extends Controller
         if(self::isLogged($request) == false){
             return redirect('admin');
         }
-        return 'to delete' .$id;
+        DB::delete('DELETE FROM `pages` WHERE `page_id` = ?',[$id]);
+        return redirect(url('admin/page'));
     }
 
 }
