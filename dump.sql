@@ -18,7 +18,7 @@ CREATE TABLE IF NOT EXISTS `pages`
   DEFAULT CHARSET = utf8;
 
 INSERT INTO `pages` (`page_id`, `page_title`, `page_body`)
-VALUESs (1, 'Начало', 'Начало');
+VALUES (1, 'Начало', 'Начало');
 
 INSERT INTO `pages` (`page_id`, `page_title`, `page_body`)
 VALUES (NULL, 'Home page', 'Home page body');
