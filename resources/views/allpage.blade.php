@@ -7,7 +7,7 @@
             <td>{{$page->page_title}}</td>
             <td>{{$page->page_body}}</td>
             <td>Edit</td>
-            <td>Delete</td>
+            <td><a href="{{url('admin/page/delete/'.$page->page_id)}}">Delete</a></td>
         </tr>
     @endforeach
 </table>

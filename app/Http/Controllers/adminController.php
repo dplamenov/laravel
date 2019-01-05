@@ -7,6 +7,13 @@ use Illuminate\Support\Facades\DB;
 
 class adminController extends Controller
 {
+    private static function isLogged(Request $request){
+        if($request->session()->get('islogged') != true){
+            return false;
+        }
+        return true;
+    }
+
     public function index(Request $request)
     {
 
@@ -15,37 +22,6 @@ class adminController extends Controller
         }else{
             return view('login');
         }
-    }
-
-    public function create()
-    {
-        //
-    }
-
-    public function store(Request $request)
-    {
-        //
-    }
-
-    public function show($id)
-    {
-        //
-    }
-
-
-    public function edit($id)
-    {
-        //
-    }
-
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    public function destroy($id)
-    {
-        //
     }
 
     public function login(Request $request){
@@ -68,9 +44,20 @@ class adminController extends Controller
         return redirect('admin');
     }
 
-    public function viewPage(){
-        $pages = DB::select('SELECT * FROM `pages`');
+    public function viewPage(Request $request){
+        if(self::isLogged($request) == false){
+            return redirect('admin');
+        }
+        $pages = new Models\Page();
+        $pages = $pages->getAllPage();
         return view('allpage',['pages' => $pages]);
+    }
+
+    public function deletePage(Request $request, int $id){
+        if(self::isLogged($request) == false){
+            return redirect('admin');
+        }
+        return 'to delete' .$id;
     }
 
 }
