@@ -26,8 +26,18 @@ class adminController extends Controller
         }
     }
 
+    public function login_form(){
+
+    }
+
     public function login(Request $request)
     {
+        $this->validate($request, [
+            'username' => 'min:3|max:20',
+            'password' => 'min:2'
+
+        ]);
+
         $request_post = $request->post();
         $username = $request_post['username'];
         $password = $request_post['password'];
@@ -86,8 +96,6 @@ class adminController extends Controller
             'body' => 'min:20'
 
          ]);
-
-
 
     }
 

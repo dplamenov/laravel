@@ -1,7 +1,7 @@
 # CMS WITH LARAVEL
 
 # Admin panel
-Username and password for admin panel('admin') is admin & admin.
+Username and password for admin panel('admin') is adminadmin & adminadmin.
 #Laravel
 
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
