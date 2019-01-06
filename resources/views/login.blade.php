@@ -1,4 +1,4 @@
-@extends('header')
+@extends('layout.layout')
 @section('title', 'Login form')
 @section('content')
 <h1>Login form</h1>

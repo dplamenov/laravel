@@ -1,4 +1,4 @@
-@extends('header')
+@extends('layout.layout')
 @section('title', 'Error')
 @section('content')
 Error: {{$error}}

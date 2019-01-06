@@ -1,4 +1,4 @@
-@extends('header')
+@extends('layout.layout')
 @section('title', 'Admin panel')
 @section('content')
     <span>Logged</span> <a href="{{url('logout')}}">Log out</a>

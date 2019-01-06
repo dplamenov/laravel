@@ -1,4 +1,4 @@
-@extends('header')
+@extends('layout.layout')
 @section('title', 'Create page')
 @section('content')
 <a href="{{url('admin/page')}}">Go back</a>

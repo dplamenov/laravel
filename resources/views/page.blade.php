@@ -1,4 +1,4 @@
-@extends('header')
+@extends('layout.layout')
 @section('title', 'Page')
 @section('content')
 <nav style="float: right;">
