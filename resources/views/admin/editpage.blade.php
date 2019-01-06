@@ -2,10 +2,19 @@
 @section('title', "{$title}")
 @section('content')
 
+    @if(count($errors) > 0)
+        <div>
+            <ul>
+                @foreach($errors->all() as $error)
+                    <li>{{$error}}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
     <form method="post" action="{{url('admin/page/еdit/'.$page['page_id'])}}">
         @csrf
         @method('post')
-        <input type="hidden" name="page_id" style="display: none" value="{{$page['page_id']}}">
+        <input type="hidden" name="page_id" style="display: none" value="{{intval($page['page_id'])}}">
         <div>
             <label>Page title: <br><input type="text" name="page_title" style="width: 220px" value="{{$page['page_title']}}"/></label>
         </div>
