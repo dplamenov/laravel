@@ -37,12 +37,11 @@ class adminController extends Controller
         $username = $data['username'];
         $password = $data['password'];
 
-        $count = DB::select('SELECT COUNT(*) as count FROM `admin` WHERE `username` = ? and `password` = ?', [$username, $password])[0]->count;
-        if ($count == 1) {
+        if ($username == env('ADMIN_USERNAME') and $password == env('ADMIN_PASSWORD')) {
             $request->session()->put('islogged', true);
             return redirect('admin');
         } else {
-            return view('error', ['error' => 'No such that admin at database']);
+            return view('error', ['error' => 'Wrong username or password']);
         }
 
     }

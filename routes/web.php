@@ -10,6 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+
 Route::get('/', 'pageController@index');
 Route::resource('page', 'pageController');
 Route::post('admin/login', 'adminController@login');
