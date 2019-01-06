@@ -1,7 +1,10 @@
 # CMS WITH LARAVEL
+# How to install
+1. Rename .envexample to .env.
+2. Open it.
+3. Change value of keys
+4. Save and you are ready to use this cms.
 
-# Admin panel
-Username and password for admin panel('admin') is adminadmin & adminadmin.
 #Laravel
 
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
