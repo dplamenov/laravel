@@ -13,6 +13,8 @@
         <div>
             <label>Page body: <br><textarea style="width: 220px" name="page_body">{{$page['page_body']}}</textarea></label>
         </div>
+
+        <input type="submit"/>
     </form>
 
 
