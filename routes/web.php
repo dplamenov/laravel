@@ -21,3 +21,5 @@ Route::get('admin/page/delete/{id}','adminController@deletePage');
 Route::get('admin/page/create','adminController@createPage');
 Route::post('admin/page/create','adminController@storePage');
 Route::post('admin/page/default','adminController@setDefaultPage');
+Route::get('admin/page/еdit/{id}','adminController@editPage');
+Route::post('admin/page/еdit/{id}','adminController@storeEditPage');

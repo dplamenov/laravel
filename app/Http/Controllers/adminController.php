@@ -91,23 +91,42 @@ class adminController extends Controller
             'body' => 'min:10'
 
         ]);
-
         $title = $data['title'];
         $body = $data['body'];
-
         DB::insert("INSERT INTO `pages` (`page_id`, `page_title`, `page_body`)
 VALUES (null, ?, ?)", [$title, $body]);
-
         return redirect(url('/'));
-
-
     }
 
     public function setDefaultPage(Request $request)
     {
+        if (self::isLogged($request) == false) {
+            return redirect('admin');
+        }
         $page_id = intval($request->post()['page_id']);
         DB::update("UPDATE `settings` SET `value` = ? WHERE `_key` = 'default_page'", [$page_id]);
         return redirect(url('admin/page'));
+    }
+
+    public function editPage(Request $request, $id)
+    {
+        if (self::isLogged($request) == false) {
+            return redirect('admin');
+        }
+        $page = DB::select('SELECT * FROM `pages` WHERE `page_id` = ?',[intval($id)]);
+
+        $page['page_id'] = $page[0]->page_id;
+        $page['page_title'] = $page[0]->page_title;
+        $page['page_body'] = $page[0]->page_body;
+
+        unset($page[0]);
+
+    }
+
+    public function storeEditPage(Request $request){
+        if (self::isLogged($request) == false) {
+            return redirect('admin');
+        }
     }
 
 }
