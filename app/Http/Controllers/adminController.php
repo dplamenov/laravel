@@ -120,7 +120,7 @@ VALUES (null, ?, ?)", [$title, $body]);
         $page['page_body'] = $page[0]->page_body;
 
         unset($page[0]);
-
+        return view('admin.editpage',['page' => $page, 'title' => 'Edit: ' . $page['page_title']]);
     }
 
     public function storeEditPage(Request $request){
