@@ -2,6 +2,9 @@
 @section('title', 'Pages')
 @section('content')
     <a href="{{url('admin')}}">Go back</a>
+    @if(isset($error))
+        <p style="color: red">{{$error}}</p>
+    @endif
     <hr>
     <a href="{{url('admin/page/create')}}">Create page</a>
     @if(is_array($pages))

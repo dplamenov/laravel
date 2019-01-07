@@ -67,11 +67,21 @@ class adminController extends Controller
 
     public function deletePage(Request $request, int $id)
     {
+
         if (self::isLogged($request) == false) {
             return redirect('admin');
         }
-        DB::delete('DELETE FROM `pages` WHERE `page_id` = ?', [$id]);
-        return redirect(url('admin/page'));
+        $pages = new Models\Page;
+        $pages = $pages->getAllPage();
+        $default_page = DB::select('SELECT * FROM `settings` WHERE `_key` = ?', ["default_page"]);
+        if ($id == intval($default_page[0]->value)) {
+            return view('admin.allpage', ['pages' => $pages, 'error' => 'You can`t delete default page!']);
+        } else {
+            DB::delete('DELETE FROM `pages` WHERE `page_id` = ?', [$id]);
+            return redirect(url('admin/page'));
+        }
+
+
     }
 
     public function createPage(Request $request)
