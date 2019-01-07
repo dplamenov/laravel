@@ -11,6 +11,7 @@
             </ul>
         </div>
     @endif
+    You edit page: {{$page['page_title']}}
     <form method="post" action="{{url('admin/page/еdit/'.$page['page_id'])}}">
         @csrf
         @method('post')

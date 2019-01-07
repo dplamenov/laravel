@@ -10,6 +10,7 @@ class adminController extends Controller
 
     private static function isLogged(Request $request)
     {
+
         if ($request->session()->get('islogged') != true) {
             return false;
         }

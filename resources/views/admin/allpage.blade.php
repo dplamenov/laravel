@@ -7,7 +7,9 @@
     @endif
     <hr>
     <a href="{{url('admin/page/create')}}">Create page</a>
+
     @if(is_array($pages))
+        Pages count: {{count($pages)}}
         <table border="1">
             <tr>
                 <th>Page id</th>
