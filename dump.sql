@@ -43,9 +43,6 @@ CREATE TABLE IF NOT EXISTS `admin`
 INSERT INTO `settings` (`_key`, `value`)
 VALUES ('default_page', '1');
 
-INSERT INTO `admin` (`admin_id`, `username`, `email`, `password`)
-VALUES (NULL, 'adminadmin', 'email@example.com', 'adminadmin');
-
 
 /*!40101 SET CHARACTER_SET_CLIENT = @OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS = @OLD_CHARACTER_SET_RESULTS */;
