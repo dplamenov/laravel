@@ -13,7 +13,7 @@
 
 
 Route::get('/', 'pageController@index');
-Route::resource('page', 'pageController');
+Route::get('page/{id}', 'pageController@show');
 Route::post('admin/login', 'adminController@login');
 Route::get('logout', 'adminController@logout');
 Route::get('admin', 'adminController@index');
