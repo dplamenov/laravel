@@ -31,14 +31,6 @@ CREATE TABLE IF NOT EXISTS `settings`
   DEFAULT CHARSET = utf8;
 COMMIT;
 
-CREATE TABLE IF NOT EXISTS `admin`
-(
-  `admin_id` int(11)     NOT NULL AUTO_INCREMENT,
-  `username` VARCHAR(22) NOT NULL,
-  `email`    VARCHAR(60) NOT NULL,
-  `password` VARCHAR(60) NOT NULL,
-  PRIMARY KEY (`admin_id`)
-) ENGINE = InnoDB;
 
 INSERT INTO `settings` (`_key`, `value`)
 VALUES ('default_page', '1');
