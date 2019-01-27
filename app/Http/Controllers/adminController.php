@@ -152,4 +152,8 @@ VALUES (null, ?, ?)", [$title, $body]);
 
     }
 
+    public function changetheme(Request $request){
+
+    }
+
 }

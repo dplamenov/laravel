@@ -52,6 +52,18 @@
             <input type="submit"/>
         </form>
     </div>
+    <h2>
+        Change theme
+    </h2>
+    <div>
+        <form method="post" action="{{url('admin/changetheme')}}">
+            @method('post')
+            @csrf
+            <select name="theme_id">
+
+            </select>
+        </form>
+    </div>
 
 @endsection
 

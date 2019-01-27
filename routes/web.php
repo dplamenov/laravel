@@ -10,14 +10,13 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'pageController@index');
 Route::get('page/{id}', 'pageController@show');
 Route::post('admin/login', 'adminController@login');
 Route::get('logout', 'adminController@logout');
 Route::get('admin', 'adminController@index');
-
 Route::get('admin/page', 'adminController@viewPage');
 Route::get('admin/page/delete/{id}', 'adminController@deletePage');
 Route::get('admin/page/create', 'adminController@createPage');
@@ -25,3 +24,4 @@ Route::post('admin/page/create', 'adminController@storePage');
 Route::post('admin/page/default', 'adminController@setDefaultPage');
 Route::get('admin/page/еdit/{id}', 'adminController@editPage');
 Route::post('admin/page/еdit/{id}', 'adminController@storeEditPage');
+Route::post('admin/changetheme', 'adminController@changetheme');
