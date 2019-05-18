@@ -22,7 +22,7 @@
                 <tr>
                     <td>{{$page->page_id}}</td>
                     <td>{{$page->page_title}}</td>
-                    <td>{{$page->page_body}}</td>
+                    <td>{{strip_tags($page->page_body)}}</td>
                     <td><a href="{{url('admin/page/еdit/'.$page->page_id)}}">Edit</a></td>
                     <td><a href="{{url('admin/page/delete/'.$page->page_id)}}">Delete</a></td>
                 </tr>
