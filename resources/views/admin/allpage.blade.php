@@ -60,7 +60,9 @@
             @method('post')
             @csrf
             <select name="theme_id">
-
+                @foreach($themes as $theme)
+                    <option>{{ucfirst($theme)}}</option>
+                @endforeach
             </select>
         </form>
     </div>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Models\Theme;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\DB;
@@ -63,9 +64,9 @@ class adminController extends Controller
         $pages = new Models\Page();
         $pages = $pages->getAllPage();
         if (count($pages) == 0) {
-            return view('admin.allpage', ['pages' => 'No page']);
+            return view('admin.allpage', ['pages' => 'No page', 'themes' => Theme::getAllTheme()]);
         }
-        return view('admin.allpage', ['pages' => $pages]);
+        return view('admin.allpage', ['pages' => $pages, 'themes' => Theme::getAllTheme()]);
     }
 
     public function deletePage(Request $request, int $id)
@@ -78,7 +79,7 @@ class adminController extends Controller
         $pages = $pages->getAllPage();
         $default_page = DB::select('SELECT * FROM `settings` WHERE `_key` = ?', ["default_page"]);
         if ($id == intval($default_page[0]->value)) {
-            return view('admin.allpage', ['pages' => $pages, 'error' => 'You can`t delete default page!']);
+            return view('admin.allpage', ['pages' => $pages, 'error' => 'You can`t delete default page!', 'themes' => Theme::getAllTheme()]);
         } else {
             DB::delete('DELETE FROM `pages` WHERE `page_id` = ?', [$id]);
             return redirect(url('admin/page'));

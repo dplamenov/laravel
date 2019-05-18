@@ -6,7 +6,7 @@ namespace App\Http\Controllers\Models;
 
 class Theme
 {
-    public function getAllTheme()
+    public static function getAllTheme()
     {
         return ['default', 'modern'];
     }
