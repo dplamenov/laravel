@@ -8,6 +8,6 @@ class Theme
 {
     public function getAllTheme()
     {
-
+        return ['default', 'modern'];
     }
 }
