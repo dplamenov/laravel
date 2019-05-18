@@ -1,5 +1,6 @@
 @extends('layout.layout')
 @section('title', "{$title}")
+
 @section('content')
 
     @if(count($errors) > 0)
@@ -21,13 +22,13 @@
                                           value="{{$page['page_title']}}"/></label>
         </div>
 
-        <div>
+        <div style="align-self: center; width: 780px">
             <label>Page body: <br><textarea style="width: 220px"
-                                            name="page_body">{{$page['page_body']}}</textarea></label>
+                                            name="page_body" id="page_body">{{$page['page_body']}}</textarea></label>
         </div>
 
         <input type="submit"/>
     </form>
-
+    <script>CKEDITOR.replace( 'page_body' );</script>
 
 @endsection
