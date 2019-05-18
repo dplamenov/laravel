@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\DB;
 
 class adminController extends Controller
@@ -10,6 +11,7 @@ class adminController extends Controller
 
     private static function isLogged(Request $request)
     {
+        
 
         if ($request->session()->get('islogged') != true) {
             return false;
