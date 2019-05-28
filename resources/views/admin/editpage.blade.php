@@ -12,6 +12,7 @@
             </ul>
         </div>
     @endif
+    <a href="{{route('admin_page')}}">Go back</a>
     You edit page: {{$page['page_title']}}
     <form method="post" action="{{url('admin/page/еdit/'.$page['page_id'])}}">
         @csrf
