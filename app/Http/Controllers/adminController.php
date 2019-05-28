@@ -12,7 +12,7 @@ class adminController extends Controller
 
     private static function isLogged(Request $request)
     {
-        
+
 
         if ($request->session()->get('islogged') != true) {
             return false;
@@ -155,7 +155,13 @@ VALUES (null, ?, ?)", [$title, $body]);
 
     }
 
-    public function changetheme(Request $request){
+    public function changetheme(Request $request)
+    {
+
+    }
+
+    public function account()
+    {
 
     }
 

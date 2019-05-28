@@ -25,3 +25,4 @@ Route::post('admin/page/default', 'adminController@setDefaultPage');
 Route::get('admin/page/еdit/{id}', 'adminController@editPage');
 Route::post('admin/page/еdit/{id}', 'adminController@storeEditPage');
 Route::post('admin/changetheme', 'adminController@changetheme');
+Route::get('admin/account', 'adminController@account');

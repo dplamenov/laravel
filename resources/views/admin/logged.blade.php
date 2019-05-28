@@ -5,6 +5,7 @@
 <br>
 <div>
     <a href="{{url('admin/page')}}">Page</a>
+    <a href="{{url('admin/account')}}">Account</a>
 </div>
     @endsection
 
