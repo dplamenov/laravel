@@ -8,11 +8,11 @@
         @csrf
         <div class="form-group">
             <label>Username</label>
-            <input type="text" class="form-control" id="username" placeholder="" value="{{$data['username']}}">
+            <input type="text" class="form-control" name="username" placeholder="" value="{{$data['username']}}">
         </div>
         <div class="form-group">
             <label>Password</label>
-            <input type="password" class="form-control" id="password" placeholder="" value="{{$data['password']}}">
+            <input type="password" class="form-control" name="password" placeholder="" value="{{$data['password']}}">
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>

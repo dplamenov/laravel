@@ -169,6 +169,7 @@ VALUES (null, ?, ?)", [$title, $body]);
 
     public function accountSave(Request $request)
     {
+        echo '<pre>' . print_r($request->post(), true) . '</pre>';
         $this->validate($request, [
             'username' => 'min:5',
             'password' => 'min:5'
