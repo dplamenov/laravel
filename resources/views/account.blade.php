@@ -3,7 +3,7 @@
 @section('content')
     <a href="{{url('admin')}}">Go back</a>
     <h1>Account settings</h1>
-    <form>
+    <form method="post" action="{{url('')}}">
         <div class="form-group">
             <label>Username</label>
             <input type="text" class="form-control" id="username" placeholder="" value="{{$data['username']}}">

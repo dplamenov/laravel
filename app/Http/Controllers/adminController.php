@@ -167,4 +167,9 @@ VALUES (null, ?, ?)", [$title, $body]);
         return view('account', ['data' => $view_data]);
     }
 
+    public function accountSave(Request $request)
+    {
+
+    }
+
 }
