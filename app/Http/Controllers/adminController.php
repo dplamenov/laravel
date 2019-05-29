@@ -162,7 +162,7 @@ VALUES (null, ?, ?)", [$title, $body]);
 
     public function account()
     {
-
+        return view('account');
     }
 
 }
