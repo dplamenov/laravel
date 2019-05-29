@@ -162,7 +162,9 @@ VALUES (null, ?, ?)", [$title, $body]);
 
     public function account()
     {
-        return view('account');
+        $view_data['username'] = env('ADMIN_USERNAME');
+        $view_data['password'] = env('ADMIN_USERNAME');
+        return view('account', ['data' => $view_data]);
     }
 
 }

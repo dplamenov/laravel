@@ -6,11 +6,11 @@
     <form>
         <div class="form-group">
             <label for="exampleInputEmail1">Username</label>
-            <input type="email" class="form-control" id="username" placeholder="" value="">
+            <input type="text" class="form-control" id="username" placeholder="" value="{{$data['username']}}">
         </div>
         <div class="form-group">
             <label for="exampleInputEmail1">Password</label>
-            <input type="email" class="form-control" id="password" placeholder="" value="">
+            <input type="password" class="form-control" id="password" placeholder="" value="{{$data['password']}}">
         </div>
     </form>
 @endsection
