@@ -181,6 +181,15 @@ VALUES (null, ?, ?)", [$title, $body]);
             'email' => 'email'
         ]);
 
+        $admin = Admin::find(1);
+        $admin->username = $validate['username'];
+        $admin->password = $validate['password'];
+        $admin->email = $validate['email'];
+
+        $admin->save();
+
+        return redirect()->route('admin_page');
+
 
     }
 
