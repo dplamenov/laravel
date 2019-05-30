@@ -1,10 +1,13 @@
-# CMS WITH LARAVEL
+#CMS with Laravel
 # How to install
 1. Rename .envexample to .env.
 2. Open it.
 3. Change value of keys
 4. Save and you are ready to use this cms.
 
+# Admin
+Default admin account is username and password is `adminadmin`, default email is `email@example.com`.
+You can change them.
 #Laravel
 
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
