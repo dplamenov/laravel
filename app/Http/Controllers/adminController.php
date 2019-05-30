@@ -177,7 +177,8 @@ VALUES (null, ?, ?)", [$title, $body]);
     {
         $validate = $this->validate($request, [
             'username' => 'min:5',
-            'password' => 'min:5'
+            'password' => 'min:5',
+            'email' => 'email'
         ]);
 
 
