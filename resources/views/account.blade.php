@@ -23,6 +23,10 @@
             <label>Password</label>
             <input type="password" class="form-control" name="password" placeholder="" value="{{$data['password']}}">
         </div>
+        <div class="form-group">
+            <label>Email</label>
+            <input type="text" class="form-control" name="email" placeholder="" value="{{$data['email']}}">
+        </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 @endsection

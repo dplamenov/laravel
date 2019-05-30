@@ -169,15 +169,18 @@ VALUES (null, ?, ?)", [$title, $body]);
         $admin = Admin::find(1);
         $view_data['username'] = $admin->username;
         $view_data['password'] = $admin->password;
+        $view_data['email'] = $admin->email;
         return view('account', ['data' => $view_data]);
     }
 
     public function accountSave(Request $request)
     {
-        $this->validate($request, [
+        $validate = $this->validate($request, [
             'username' => 'min:5',
             'password' => 'min:5'
         ]);
+
+
     }
 
 }
