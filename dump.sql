@@ -35,6 +35,14 @@ COMMIT;
 INSERT INTO `settings` (`_key`, `value`)
 VALUES ('default_page', '1');
 
+CREATE TABLE IF NOT EXISTS `admin`
+(
+  `admin_id` int(11)     NOT NULL,
+  `username` varchar(22) NOT NULL,
+  `email`    varchar(60) NOT NULL,
+  `password` varchar(60) NOT NULL
+) ENGINE = InnoDB DEFAULT
+
 
 /*!40101 SET CHARACTER_SET_CLIENT = @OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS = @OLD_CHARACTER_SET_RESULTS */;
