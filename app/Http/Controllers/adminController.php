@@ -166,8 +166,9 @@ VALUES (null, ?, ?)", [$title, $body]);
         if (self::isLogged($request) == false) {
             return redirect('admin');
         }
-        $view_data['username'] = env('ADMIN_USERNAME');
-        $view_data['password'] = env('ADMIN_USERNAME');
+        $admin = Admin::find(1);
+        $view_data['username'] = $admin->username;
+        $view_data['password'] = $admin->password;
         return view('account', ['data' => $view_data]);
     }
 
