@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Admin;
 use App\Http\Controllers\Models\Theme;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
@@ -40,8 +41,8 @@ class adminController extends Controller
 
         $username = $data['username'];
         $password = $data['password'];
-
-        if ($username == env('ADMIN_USERNAME') and $password == env('ADMIN_PASSWORD')) {
+        $admin = Admin::where('username', '=', $username)->where('password', '=', $password)->get();
+        if (count($admin) == 1) {
             $request->session()->put('islogged', true);
             return redirect('admin');
         } else {
