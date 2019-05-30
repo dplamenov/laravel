@@ -160,8 +160,11 @@ VALUES (null, ?, ?)", [$title, $body]);
 
     }
 
-    public function account()
+    public function account(Request $request)
     {
+        if (self::isLogged($request) == false) {
+            return redirect('admin');
+        }
         $view_data['username'] = env('ADMIN_USERNAME');
         $view_data['password'] = env('ADMIN_USERNAME');
         return view('account', ['data' => $view_data]);
@@ -169,6 +172,7 @@ VALUES (null, ?, ?)", [$title, $body]);
 
     public function accountSave(Request $request)
     {
+
         $this->validate($request, [
             'username' => 'min:5',
             'password' => 'min:5'
