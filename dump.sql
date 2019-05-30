@@ -41,7 +41,8 @@ CREATE TABLE IF NOT EXISTS `admin`
   `username` varchar(22) NOT NULL,
   `email`    varchar(60) NOT NULL,
   `password` varchar(60) NOT NULL
-) ENGINE = InnoDB DEFAULT
+) ENGINE = InnoDB
+  DEFAULT CHARSET = utf8;
 
 
 /*!40101 SET CHARACTER_SET_CLIENT = @OLD_CHARACTER_SET_CLIENT */;
