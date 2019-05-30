@@ -44,6 +44,9 @@ CREATE TABLE IF NOT EXISTS `admin`
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8;
 
+INSERT INTO `admin` (`admin_id`, `username`, `email`, `password`)
+VALUES
+  (1, 'adminadmin', 'email@example.com', 'adminadmin');
 
 /*!40101 SET CHARACTER_SET_CLIENT = @OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS = @OLD_CHARACTER_SET_RESULTS */;
